@@ -69,31 +69,31 @@
 
 //----- 2022.10 T39 --begin
 
-#include <iostream>
-using namespace std;
-class Position
-{
-public:
-    int x, y;
+// #include <iostream>
+// using namespace std;
+// class Position
+// {
+// public:
+//     int x, y;
 
-public:
-    Position(int px, int py)
-    {
-        x = px;
-        y = py;
-    };
-    Position operator+(const Position &p)
-    {
+// public:
+//     Position(int px, int py)
+//     {
+//         x = px;
+//         y = py;
+//     };
+//     Position operator+(const Position &p)
+//     {
 
-        return Position(x + p.x, y + p.y);
-    };
-};
-int main()
-{
-    Position s1(2,  0);
-    cout << s1.x << "/" << s1.y << endl;
-    return 0;
-}
+//         return Position(x + p.x, y + p.y);
+//     };
+// };
+// int main()
+// {
+//     Position s1(2,  0);
+//     cout << s1.x << "/" << s1.y << endl;
+//     return 0;
+// }
 
 //----- 2022.10 T39 --end
 
@@ -135,3 +135,111 @@ int main()
 //         return sqrt(dx * dx + dy * dy);
 //     }
 // };
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Pet
+{
+protected:
+    string type;
+    int no;
+
+public:
+    Pet(string _type, int _no)
+    {
+        type = _type;
+        no = _no;
+    };
+};
+
+class Dog : public Pet
+{
+private:
+    string name;
+    int size;
+    string tp;
+
+public:
+    Dog(string _type, int _no, string _name, int _size) : Pet(_type, _no)
+    {
+        name = _name;
+        size = _size;
+        if (
+            _no == 1)
+        {
+            tp = "big";
+        }
+        if (_no == 2)
+        {
+            tp = "medium";
+        }
+        if (_no == 3)
+        {
+            tp = "small";
+        }
+    };
+    void printf()
+    {
+        cout << "Dog's"
+             << " "
+             << "ID=" << no << endl;
+        cout << name << " "
+             << "is"
+             << " " << tp << endl;
+    };
+};
+
+class Cat : public Pet
+{
+private:
+    string name;
+    string food;
+
+public:
+    Cat(string _type, int _no, string _name, string _food) : Pet(_type, _no)
+    {
+        name = _name;
+        food = _food;
+    };
+    void printf()
+    {
+        cout << "Cat's"
+             << " "
+             << "ID=" << no << endl;
+        cout << name << " "
+             << "like"
+             << " " << food << endl;
+    };
+};
+
+int main()
+{
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+        string type;
+        int no;
+        string name;
+        cin >> type;
+
+        if (type == "C")
+        {
+            string food;
+            cin >> type >> no >> name >> food;
+            Cat cc(type, no, name, food);
+            cc.printf();
+        };
+        if (type == "D")
+        {
+            int size;
+            cin >> type >> no >> name >> size;
+            Dog dd(type, no, name, size);
+            dd.printf();
+        };
+    }
+};
