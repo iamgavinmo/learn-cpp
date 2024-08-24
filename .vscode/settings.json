@@ -58,7 +58,13 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "iostream": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "typeinfo": "cpp",
+    "array": "cpp",
+    "string_view": "cpp",
+    "initializer_list": "cpp",
+    "utility": "cpp",
+    "type_traits": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
