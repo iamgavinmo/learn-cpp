@@ -245,75 +245,76 @@
 //     }
 // };
 
-#include <iostream>
-using namespace std;
-class Ctype
-{
-private:
-    int r;
-    int w;
+//----- v2 - T4-无参构造以及引用类（非派生） ------
+// #include <iostream>
+// using namespace std;
+// class Ctype
+// {
+// private:
+//     int r;
+//     int w;
 
-public:
-    Ctype()
-    {
-        r = 0;
-        w = 0;
-    };
-    Ctype(int _r, int _w)
-    {
-        r = _r;
-        w = _w;
-    };
-    int getR()
-    {
-        return r;
-    };
-    int getW()
-    {
-        return w;
-    };
-};
+// public:
+//     Ctype()
+//     {
+//         r = 0;
+//         w = 0;
+//     };
+//     Ctype(int _r, int _w)
+//     {
+//         r = _r;
+//         w = _w;
+//     };
+//     int getR()
+//     {
+//         return r;
+//     };
+//     int getW()
+//     {
+//         return w;
+//     };
+// };
 
-class CCar
-{
-private:
-    int price;
-    Ctype lun;
+// class CCar
+// {
+// private:
+//     int price;
+//     Ctype lun;
 
-public:
-    CCar()
-    {
-        price = 0;
-        lun = Ctype();
-    };
-    CCar(int _price, Ctype _lun)
-    {
-        price = _price;
-        lun = _lun;
-    };
+// public:
+//     CCar()
+//     {
+//         price = 0;
+//         lun = Ctype();
+//     };
+//     CCar(int _price, Ctype _lun)
+//     {
+//         price = _price;
+//         lun = _lun;
+//     };
 
-    int getPrice()
-    {
-        return price;
-    };
+//     int getPrice()
+//     {
+//         return price;
+//     };
 
-    Ctype getLun()
-    {
-        return lun;
-    };
-};
+//     Ctype getLun()
+//     {
+//         return lun;
+//     };
+// };
 
-int main()
-{
-    int price, r, w;
-    cin >> price >> r >> w;
+// int main()
+// {
+//     int price, r, w;
+//     cin >> price >> r >> w;
 
-    Ctype it(r, w);
-    CCar ic(price, it);
-    cout << ic.getPrice() << " :" << ic.getLun().getW() << " :" <<  ic.getLun().getR() << endl;
+//     Ctype it(r, w);
+//     CCar ic(price, it);
+//     cout << ic.getPrice() << " :" << ic.getLun().getW() << " :" <<  ic.getLun().getR() << endl;
 
-    CCar n;
-    cout << " :" << n.getLun().getR() << n.getLun().getW() << " :" << n.getPrice() << endl;
+//     CCar n;
+//     cout << " :" << n.getLun().getR() << n.getLun().getW() << " :" << n.getPrice() << endl;
 
-    return 0;
-};
+//     return 0;
+// };
