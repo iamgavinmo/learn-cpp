@@ -320,26 +320,26 @@
 // };
 
 // v1 -3 数组与类的创建
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-class Student{
+// class Student{
 
-};
+// };
 
-int main()
-{
-    int t;
-    cin >> t;
-    Student *p = new Student[t];
+// int main()
+// {
+//     int t;
+//     cin >> t;
+//     Student *p = new Student[t];
 
-    for (int i = 0; i < t; i++)
-    {
-        stu[i] = Student stu()
-    }
+//     for (int i = 0; i < t; i++)
+//     {
+//         stu[i] = Student stu()
+//     }
 
-    return 0;
-};
+//     return 0;
+// };
 
 /* ------------------------------------*/
 // #include <iostream>
@@ -1222,3 +1222,54 @@ int main()
 
 //   return 0;
 // };
+
+/* 算法 */
+#include <iostream>
+using namespace std;
+
+int maxsize = 100;
+typedef struct cycqueue
+{
+    int data[100];
+    int front, rear;
+} CycQue;
+
+CycQue CQ;
+
+int quitCycQue(CycQue *cq)
+{
+    if (cq->front == cq->rear)
+    {
+        cout << " 队列为空 " << endl;
+        return 0;
+    }
+    else
+    {
+        int temp = cq->data[cq->front];
+        cq->front = (cq->front + 1) % maxsize;
+        return temp;
+    }
+}
+
+int entryCycQue(CycQue *cq, int value)
+{
+    if (cq->rear + 1 == cq->front)
+    {
+        cout << " 队列已满 " << endl;
+        return 0;
+    }
+    else
+    {
+        cq->data[cq->rear] = value;
+        cq->rear = (cq->rear + 1) % maxsize;
+    }
+}
+
+int main()
+{
+    entryCycQue(&CQ, 1);
+    entryCycQue(&CQ, 2);
+    int d = quitCycQue(&CQ);
+    int S = quitCycQue(&CQ);
+    cout << d << S << endl;
+}
