@@ -1223,7 +1223,7 @@
 //   return 0;
 // };
 
-/* 算法 */
+/* 队列算法 */
 #include <iostream>
 using namespace std;
 
