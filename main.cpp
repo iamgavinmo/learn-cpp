@@ -1273,3 +1273,29 @@
 //     int S = quitCycQue(&CQ);
 //     cout << d << S << endl;
 // }
+
+typedef struct btnode
+{
+    DataType data;
+    struct btnode *lchild, *rchild;
+} *BinTree;
+
+void preOrder(BinTree bt)
+{
+    if (bt != NULL)
+    {
+        Visit(bt);
+        preOrder(bt->lchild);
+        preOrder(bt->rchild);
+    }
+};
+
+void MidOrder(BinTree bt)
+{
+    if (bt != NULL)
+    {
+        MidOrder(bt->lchild);
+        Visit(bt);
+        MidOrder(bt->rchild);
+    }
+};
